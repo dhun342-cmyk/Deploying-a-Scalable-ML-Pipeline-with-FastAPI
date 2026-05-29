@@ -35,7 +35,6 @@ def test_post_inference():
     assert body["prediction"] is not None
 
 
-
 def test_data_type_validation():
     data = pd.read_csv("data/census.csv")
 

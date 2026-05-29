@@ -24,8 +24,8 @@ def process_data(
         Dataframe containing the features and label.
         Columns in `categorical_features`
     categorical_features: list[str]
-        List containing the names of the c
-        ategorical features (default=[])
+        List containing the names of the
+        categorical features (default=[])
     label : str
         Name of the label column in `X`.
         If None, then an empty array will be returned
@@ -61,7 +61,7 @@ def process_data(
         y = np.array([])
 
     X_categorical = X[categorical_features].values
-    X_continuous = X.drop(*[categorical_features], axis=1)
+    X_continuous = X.drop(columns=categorical_features)
 
     if training is True:
         encoder = OneHotEncoder(sparse_output=False, handle_unknown="ignore")

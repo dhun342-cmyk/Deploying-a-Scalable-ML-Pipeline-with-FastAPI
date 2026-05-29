@@ -25,7 +25,8 @@ class Data(BaseModel):
     capital_gain: int = Field(..., example=0, alias="capital-gain")
     capital_loss: int = Field(..., example=0, alias="capital-loss")
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
-    native_country: str = Field(..., example="United-States", 
+    native_country: str = Field(...,
+                                example="United-States",
                                 alias="native-country")
 
 
@@ -77,4 +78,3 @@ async def post_inference(data: Data):
 
     _inference = model.predict(data_processed)
     return {"prediction": apply_label(_inference)}
-

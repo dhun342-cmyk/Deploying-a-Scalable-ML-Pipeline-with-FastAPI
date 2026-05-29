@@ -1,7 +1,6 @@
 import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from sklearn.ensemble import RandomForestClassifier
-
+from sklearn.linear_model import LogisticRegression
 from ml.data import process_data
 
 # TODO: add necessary import
@@ -25,7 +24,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     # TODO: implement the function
-    model = RandomForestClassifier()
+    model = LogisticRegression(max_iter=1000, class_weight="balanced")
     model.fit(X_train, y_train)
     return model
 
