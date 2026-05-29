@@ -4,10 +4,8 @@ import requests
 # TODO: send a GET using the URL http://127.0.0.1:8000
 r = requests.get("http://127.0.0.1:8000")
 
-# TODO: print the status code
-print(r.status_code)
-# TODO: print the welcome message
-print(r.json()["message"])
+print("Status Code:", r.status_code)
+print("Result:", r.json()["message"])
 
 data = {
     "age": 37,
@@ -27,9 +25,7 @@ data = {
 }
 
 # TODO: send a POST using the data above
-r = requests.post("http://127.0.0.1:8000/data/", json=data)
+r = requests.post("http://127.0.0.1:8000/predict", json=data)
 
-# TODO: print the status code
-print(r.status_code)
-# TODO: print the result
-print(r.json())
+print("Status Code:", r.status_code)
+print("Result:", r.json()["prediction"])
